@@ -3,6 +3,7 @@ import time as time #Dependencies: All - used for testing/performance monitoring
 import os #Dependencies: read_terms
 import urllib.request #Dependencies: url_scraper
 import json
+import re
 import binascii
 
 class URLScraper():
@@ -39,16 +40,23 @@ class URLScraper():
         self,fullurl,urlreplacestring,source_name,output_location
         ):
         os.chdir(output_location)
-        count=0
+        search_list_count=len(set(self.scraper_terms[source_name])) #This is used to help with the formatting of the output file in urlscraper
+        count=1
         with open(source_name+str(time.time())+'.json','w', encoding='utf-8') as outfile:
+            outfile.write('[') #for JSON formatting. writing multiple times so need to make a list.
             for key in self.scraper_terms:
                 for item in set(self.scraper_terms[key]):
-                    count+=1
+                    #if count<=3:
                     print(count)
                     item = self.remove_non_ascii(item)
                     request_url = fullurl.replace("*",item)
                     req = urllib.request.Request(request_url, headers={'User-Agent': "Magic Browser"})
                     with urllib.request.urlopen(req) as response:
                         for line in response:
-                            json.dump(line.decode('utf-8','ignore'),outfile)
+                            if count==search_list_count:
+                                outfile.write(line.decode('utf-8','ignore'))
+                            else:
+                                outfile.write(line.decode('utf-8','ignore')+',')
+                    count+=1
+            outfile.write(']')
         outfile.close()
