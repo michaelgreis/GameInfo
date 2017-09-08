@@ -5,6 +5,7 @@ import time as time
 print("Test Started")
 print(time.time())
 
+output_type = 'JSON'
 input_file_path = "configfiles/"
 source_name = "marketplace.xbox.com"
 full_url = "http://marketplace.xbox.com/en-US/SiteSearch/xbox/?query=[*]&PageSize=1000000"
@@ -14,7 +15,7 @@ microsoftscraper = URLS.URLScraper()
 
 microsoftscraper.read_terms(input_file_path,source_name)
 
-microsoftscraper.url_scraper(full_url,"*",source_name,data_output_location)
+microsoftscraper.url_scraper(full_url,"*",source_name,data_output_location,output_type)
 
 print("Test Completed")
 print(time.time())
