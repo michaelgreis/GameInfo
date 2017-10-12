@@ -1,14 +1,27 @@
-from classes import URLScraper as URLS
+from classes.SonyScraper import SonyScraper
+from scrapy.crawler import Crawler
+from scrapy.crawler import CrawlerProcess
+
+import os
 import time as time
-from classes.spiders import spider
+
 
 print("Test Started")
 print(time.time())
-url="https://store.playstation.com/#!/en-us/all-ps4-games/cid=STORE-MSF77008-PS4ALLGAMESCATEG?emcid=pa-st-111690"
+source_name='sonymarketplace'
+data_output_location = "outputfiles/"
 
-#sony_scraper=URLS.URLScraper()
+os.chdir(data_output_location)
 
-#sony_scraper.get_config_info(url)
+spider=SonyScraper(
+    #output_directory=data_output_location,
+    source_name=source_name)
 
-sony_spider=spider.DelayedSpider()
-sony_spider.parse(url)
+process = CrawlerProcess()
+#process.crawl(SonyScraper(output_location=data_output_location,source_name=source_name))
+process.crawl(spider)
+process.start()
+
+#process=CrawlerProcess()
+#process.crawl(spider)
+#process.start()
