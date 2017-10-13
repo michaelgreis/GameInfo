@@ -1,6 +1,7 @@
 import scrapy
 import os
 import time as time
+import json
 
 class SonyScraper(scrapy.Spider):
     name="sony_scraper"
@@ -56,7 +57,7 @@ class SonyScraper(scrapy.Spider):
                     )
                     self.scraped_urls.append(url) #added to allow for skipping of already scraped web pages
         with open(self.name+str(time.time())+'.json','w', encoding='utf-8') as outfile:
-                outfile.write(str(game_values))
+                outfile.write(json.dumps(game_values))
         outfile.close()
         #print(self.scraped_urls)
 
