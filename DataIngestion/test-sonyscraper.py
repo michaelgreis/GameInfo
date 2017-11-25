@@ -15,7 +15,8 @@ os.chdir(data_output_location)
 
 spider=SonyScraper(
     #output_directory=data_output_location,
-    source_name=source_name)
+    #source_name=source_name
+    )
 
 process = CrawlerProcess()
 #process.crawl(SonyScraper(output_location=data_output_location,source_name=source_name))

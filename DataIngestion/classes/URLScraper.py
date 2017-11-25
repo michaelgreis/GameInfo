@@ -4,9 +4,6 @@ import os #Dependencies: read_terms
 import urllib.request #Dependencies: url_scraper
 from bs4 import BeautifulSoup #Needed for the Sony scraper
 import scrapy #Needed in order to delay the scraper for sony
-#import json
-#import re
-#import binascii
 
 class URLScraper():
     #initializing
