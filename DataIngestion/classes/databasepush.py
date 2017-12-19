@@ -24,21 +24,29 @@ class datapush():
     def read_data(
         self, file_to_read
     ):
-        self.json_data=json.load(open(file_to_read))
-        return(self.json_data)
+        #self.json_data=json.load(open(file_to_read))
+        #return(self.json_data)
+        return(json.load(open(file_to_read)))
 
 #this pushes the sony data into the right table. Going to need to be re-written for each source that we have. Or re-written to use a config file.
     def push_data(
-        self
+        self,data_to_load
     ):
-        cur = self.connect_to_db()
-        #cur = conn.cursor()
-        for entry in self.json_data:
+        conn = self.connect_to_db()
+        cur = conn.cursor()
+        cur.execute("SET search_path TO scraperdata")
+        print('Cursor created successfully')
+        for entry in data_to_load:
             print(entry['game_name'])
             try:
-                cur.execute("INSERT INTO scraperdata.sonywebsite(image,badge_sale,game_name) VALUES(%s,%s,%s)",(entry['image'],entry['badge_sale'],entry['game_name'],))
+                cur.execute("INSERT INTO sonywebsite(image,badge_sale,game_name) VALUES(%s,%s,%s) ON CONFLICT ON CONSTRAINT unique_row DO NOTHING;",(entry['image'],entry['badge_sale'],entry['game_name']))
+                #cur.execute("INSERT INTO sonywebsite(image,badge_sale,game_name) VALUES(%s,%s,%s)",(entry['image'],entry['badge_sale'],entry['game_name']))
+                print('Successful insert.')
             except:
                 print('Failed to write '+str(entry))
+        conn.commit()
+        cur.close()
+        conn.close()
 
 
 
