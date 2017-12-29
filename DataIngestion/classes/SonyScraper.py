@@ -6,7 +6,7 @@ import json
 class SonyScraper(scrapy.Spider):
     name="sony_scraper"
     custom_settings={
-        'DOWNLOAD_DELAY':'5',
+        'DOWNLOAD_DELAY':'1',
     }
     start_urls=['https://store.playstation.com/#!/en-us/all-ps4-games/cid=STORE-MSF77008-PS4ALLGAMESCATEG?emcid=pa-st-111690']
     

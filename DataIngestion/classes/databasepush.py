@@ -28,6 +28,15 @@ class datapush():
         #return(self.json_data)
         return(json.load(open(file_to_read)))
 
+#This is used to default values before inserting to the database so that we don't have complete junk data. Can be used later to default different values.
+    def default_value(
+        self,variable
+    ):
+        if variable is None:
+            return 'Unknown'
+        else:
+            return variable
+
 #this pushes the sony data into the right table. Going to need to be re-written for each source that we have. Or re-written to use a config file.
     def push_data(
         self,data_to_load
@@ -37,11 +46,9 @@ class datapush():
         cur.execute("SET search_path TO scraperdata")
         print('Cursor created successfully')
         for entry in data_to_load:
-            print(entry['game_name'])
             try:
-                cur.execute("INSERT INTO sonywebsite(image,badge_sale,game_name) VALUES(%s,%s,%s) ON CONFLICT ON CONSTRAINT unique_row DO NOTHING;",(entry['image'],entry['badge_sale'],entry['game_name']))
-                #cur.execute("INSERT INTO sonywebsite(image,badge_sale,game_name) VALUES(%s,%s,%s)",(entry['image'],entry['badge_sale'],entry['game_name']))
-                print('Successful insert.')
+                cur.execute("INSERT INTO sonywebsite(image,badge_sale,game_name) VALUES(%s,%s,%s) ON CONFLICT ON CONSTRAINT unique_row DO NOTHING;",(self.default_value(entry['image']),self.default_value(entry['badge_sale']),self.default_value(entry['game_name'])))
+                #print('Successful insert.')
             except:
                 print('Failed to write '+str(entry))
         conn.commit()
