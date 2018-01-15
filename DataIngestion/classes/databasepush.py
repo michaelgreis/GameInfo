@@ -47,7 +47,7 @@ class datapush():
         print('Cursor created successfully')
         for entry in data_to_load:
             try:
-                cur.execute("INSERT INTO sonywebsite(image,badge_sale,game_name) VALUES(%s,%s,%s) ON CONFLICT ON CONSTRAINT unique_row DO NOTHING;",(self.default_value(entry['image']),self.default_value(entry['badge_sale']),self.default_value(entry['game_name'])))
+                cur.execute("INSERT INTO sonywebsite(image,badge_sale,game_name,plus_sale,console_type,item_type) VALUES(%s,%s,%s,%s,%s,%s) ON CONFLICT ON CONSTRAINT unique_row DO NOTHING;",(self.default_value(entry['image']),self.default_value(entry['badge_sale']),self.default_value(entry['game_name']),self.default_value(entry['plus_sale']),self.default_value(entry['console_type']),self.default_value(entry['item_type'])))
                 #print('Successful insert.')
             except:
                 print('Failed to write '+str(entry))

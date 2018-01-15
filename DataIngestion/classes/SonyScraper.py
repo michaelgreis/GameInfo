@@ -23,10 +23,17 @@ class SonyScraper(scrapy.Spider):
             IMAGE_SELECTOR='.product-image__img--main img'
             BADGESALE_SELECTOR='.price-display__price::text'
             GAMETITLE_SELECTOR='.grid-cell__title::text'
+            PLUS_BADGESALE_SELECTOR='.price-display__price--is-plus-upsell::text'
+            CONSOLE_TYPE_SELECTOR='.grid-cell__left-detail--detail-1::text'
+            ITEM_TYPE_SELECTOR='.grid-cell__left-detail--detail-2::text'
+
             game_values.append({
                 'image':game.css(IMAGE_SELECTOR).xpath('@src').extract_first(),
                 'badge_sale':game.css(BADGESALE_SELECTOR).extract_first(),
                 'game_name':game.css(GAMETITLE_SELECTOR).extract_first(),
+                'plus_sale':game.css(PLUS_BADGESALE_SELECTOR).extract_first(),
+                'console_type':game.css(CONSOLE_TYPE_SELECTOR).extract_first(),
+                'item_type':game.css(ITEM_TYPE_SELECTOR).extract_first(),
             })
         NEXTPAGE_SELECTOR='.paginator-control__page-number:not([class^="disabled"]) ::attr(href)'     #'.headPgCtl .pageLink:not([class^="pageLink inactive notLast selected"]) ::attr(href)'# .navlinks a ::attr(href)'
         next_page=response.css(NEXTPAGE_SELECTOR).extract()
