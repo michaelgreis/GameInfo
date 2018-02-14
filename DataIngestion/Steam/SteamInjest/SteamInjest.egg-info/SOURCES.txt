@@ -1,0 +1,13 @@
+setup.py
+SteamInjest/__init__.py
+SteamInjest/items.py
+SteamInjest/middlewares.py
+SteamInjest/pipelines.py
+SteamInjest/settings.py
+SteamInjest.egg-info/PKG-INFO
+SteamInjest.egg-info/SOURCES.txt
+SteamInjest.egg-info/dependency_links.txt
+SteamInjest.egg-info/entry_points.txt
+SteamInjest.egg-info/top_level.txt
+SteamInjest/spiders/__init__.py
+SteamInjest/spiders/product.py

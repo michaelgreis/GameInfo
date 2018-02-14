@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../DataIngestion_msft/.idea/DataIngestion_msft.iml" filepath="$PROJECT_DIR$/../DataIngestion_msft/.idea/DataIngestion_msft.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/DataIngestion_steam.iml" filepath="$PROJECT_DIR$/.idea/DataIngestion_steam.iml" />
+    </modules>
+  </component>
+</project>
