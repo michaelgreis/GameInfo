@@ -8,7 +8,10 @@ CREATE TABLE datamart.MarketEntry (
     SourceUrl VARCHAR(300) NULL,
     GameImageUrl VARCHAR(300) NULL,
     ReviewsUrl VARCHAR(300) NULL,
-    GameId INTEGER NOT NULL,
+    MarketplaceItemId INTEGER NOT NULL,
     EtlSource VARCHAR(50) NOT NULL,
     InsertDateTime TIMESTAMP DEFAULT current_timestamp
 );
+
+CREATE UNIQUE INDEX MarketEntry ON datamart.MarketEntry (ReleaseDate, SourceMarketIdentifier, PrimaryPrice,MarketplaceItemId);
+

@@ -8,3 +8,5 @@ CREATE TABLE datamart.Category (
     EtlSource VARCHAR(50) NOT NULL,
     InsertDateTime TIMESTAMP DEFAULT current_timestamp
 );
+
+CREATE UNIQUE INDEX category ON datamart.Category (categoryName, MarketEntryId, CategoryTypeId);
