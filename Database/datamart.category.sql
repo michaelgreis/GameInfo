@@ -1,4 +1,4 @@
---DROP TABLE datamart.Category
+--DROP TABLE datamart.Category;
 
 CREATE TABLE datamart.Category (
     CategoryId SERIAL PRIMARY KEY,
@@ -9,4 +9,4 @@ CREATE TABLE datamart.Category (
     InsertDateTime TIMESTAMP DEFAULT current_timestamp
 );
 
-CREATE UNIQUE INDEX category ON datamart.Category (categoryName, MarketEntryId, CategoryTypeId);
+CREATE UNIQUE INDEX NaturalKey_category ON datamart.Category (categoryName, MarketEntryId, CategoryTypeId);

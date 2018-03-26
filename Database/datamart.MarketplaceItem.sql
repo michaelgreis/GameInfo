@@ -1,7 +1,7 @@
---DROP TABLE datamart.MarketplaceItem
+--DROP TABLE datamart.MarketplaceItem;
 
 CREATE TABLE datamart.MarketplaceItem (
-    MarketplaceItemId SERIAL NOT NULL, --PRIMARY KEY,
+    MarketplaceItemId SERIAL PRIMARY KEY, --PRIMARY KEY,
     Title VARCHAR(500) NOT NULL,
     AlternateName VARCHAR(500) NULL,
     ConsoleId INTEGER NOT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE datamart.MarketplaceItem (
     InsertDateTime TIMESTAMP DEFAULT current_timestamp
     );
 
-CREATE UNIQUE INDEX MarketplaceItem ON datamart.MarketplaceItem (Title, ConsoleId, BusinessEntityId);
+CREATE UNIQUE INDEX NaturalKey_MarketplaceItem ON datamart.MarketplaceItem (Title, ConsoleId, BusinessEntityId);
 
 INSERT INTO datamart.MarketplaceItem (Title,AlternateName,ConsoleId,BusinessEntityId,EtlSource) 
     SELECT 'Unknown' AS Title,

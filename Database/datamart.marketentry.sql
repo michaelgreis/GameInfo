@@ -1,9 +1,9 @@
---DROP TABLE datamart.MarketEntry
+--DROP TABLE datamart.MarketEntry;
 
 CREATE TABLE datamart.MarketEntry (
-    MarketEntryId SERIAL NOT NULL,
+    MarketEntryId SERIAL PRIMARY KEY,
     ReleaseDate DATE NULL ,
-    SourceMarketIdentifier VARCHAR(30) NULL,
+    SourceId INTEGER NULL, --Changed from sourcemarketidentifier (mismatch on the source table's name)
     PrimaryPrice DECIMAL(6,2) NULL,
     SourceUrl VARCHAR(300) NULL,
     GameImageUrl VARCHAR(300) NULL,
@@ -13,5 +13,4 @@ CREATE TABLE datamart.MarketEntry (
     InsertDateTime TIMESTAMP DEFAULT current_timestamp
 );
 
-CREATE UNIQUE INDEX MarketEntry ON datamart.MarketEntry (ReleaseDate, SourceMarketIdentifier, PrimaryPrice,MarketplaceItemId);
-
+CREATE UNIQUE INDEX NaturalKey_MarketEntry ON datamart.MarketEntry (SourceId, PrimaryPrice,MarketplaceItemId);
