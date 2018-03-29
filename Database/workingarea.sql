@@ -1,3 +1,43 @@
+--Insert for marketitem. (WIP)
+SELECT (select COALESCE(max(marketplaceitemid),1) from datamart.marketplaceitem)+row_number() over () as marketplaceitemid, 
+	COALESCE(full_data::json->>'title',full_data::json->>'app_name') as title,
+	CASE WHEN full_data::json->>'title' IS NULL THEN full_data::json->>'app_name' ELSE NULL END AS alternatename,
+    console.consoleid,
+    
+
+
+
+
+--Select from all tables (per 3.25.2018)
+SELECT *
+FROM datamart.businessentity
+LIMIT 10;
+
+SELECT *
+FROM datamart.category
+LIMIT 10;
+
+SELECT *
+FROM datamart.categorytype
+LIMIT 10;
+
+SELECT *
+FROM datamart.console
+LIMIT 10;
+
+SELECT *
+FROM datamart.marketitem
+LIMIT 10;
+
+SELECT *
+FROM datamart.marketplaceitem
+LIMIT 10;
+
+SELECT *
+FROM datamart.source
+LIMIT 10;
+
+
 --3-20-2018
 INSERT INTO etltables.category (categoryid, categoryname, marketentryid, categorytypeid)
 

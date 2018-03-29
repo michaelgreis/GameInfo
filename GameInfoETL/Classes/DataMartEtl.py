@@ -3,7 +3,7 @@ import psycopg2
 
 class DataLoader():
     def ConnectEtl():
-        connection=psycopg2.connect("dbname='landingzone' user='datamartetl' host='lz-scraper.czn1pljrayu4.us-east-2.rds.amazonaws.com' password='AlexMichael'")
+        connection=psycopg2.connect("dbname='' user='' host='lz-scraper.czn1pljrayu4.us-east-2.rds.amazonaws.com' password=''")
         return connection
 
     def MarketplaceItem(
@@ -13,7 +13,7 @@ class DataLoader():
             connection = DataLoader.ConnectEtl()
             cur = connection.cursor()
             try:
-                cur.executemany("INSERT INTO datamart.marketplaceitem (marketplaceitemid, title, consoleid, businessentityid, etlsource,insertdatetime) SELECT (select COALESCE(max(marketplaceitemid),1) from datamart.marketplaceitem)+row_number() over () as marketplaceitemid, sonywebsite.game_name as title,console.consoleid,businessentity.businessentityid,'sonymarketplace_scraperdataTOdatamart' as etlsource, current_timestamp as insertdatetime FROM scraperdata.sonywebsite sonywebsite LEFT JOIN datamart.console console ON COALESCE(TRIM(split_part(sonywebsite.console_type,'|',1)),'Unknown') = console.consolename LEFT JOIN datamart.businessentity businessentity ON 'Unknown' = businessentity.businessname ON CONFLICT DO NOTHING;",marketplaceitem_insert)
+                cur.executemany("INSERT INTO datamart.marketplaceitem (marketplaceitemid, title, consoleid, businessentityid, etlsource,insertdatetime) SELECT (select COALESCE(max(marketplaceitemid),1) from datamart.marketplaceitem)+row_number() over () as marketplaceitemid, sonywebsite.game_name as title,console.consoleid,'sonymarketplace_scraperdataTOdatamart' as etlsource, current_timestamp as insertdatetime FROM scraperdata.sonywebsite sonywebsite LEFT JOIN datamart.console console ON COALESCE(TRIM(split_part(sonywebsite.console_type,'|',1)),'Unknown') = console.consolename ON CONFLICT DO NOTHING;",marketplaceitem_insert)
             except:
                 connection.commit()
         #elif source is 'steammarketplace':
@@ -79,6 +79,38 @@ class DataLoader():
   
     #def InsertSource(self,source): Not necessary at this time. Faster to manual insert.
 
-    #def InsertBusinessEntity(self,source): Not necessary at this time. Faster to manual insert.
+    def InsertBusinessEntity(
+        source
+        ): #necessary for the steam marketplace dataset.
+        if source is 'steammarketplace':
+            connection = DataLoader.ConnectEtl()
+            cur = connection.cursor()
+            try: # insert for publisher info into business entity
+                cur.execute(INSERT INTO datamart.businessentity ("INSERT INTO datamart.businessentity (businessentityid, businessname, etlsource, insertdatetime) SELECT (SELECT MAX(COALESCE(businessentityid,1)) FROM datamart.businessentityid)+row_number () over() as businessentityid, full_data::json->>'publisher' as businessname,'steammarketplace_scraperdataTOdatamart' as etlsource, current_timestamp as insertdatetime FROM scraperdata.steammarketplace as steammarketplace WHERE full_data::json->>'publisher' IS NOT NULL ON CONFLICT DO NOTHING;")
+            except:
+                connection.commit()
+            try: # insert into business entity for development studio.
+                cur.execute("INSERT INTO datamart.businessentity (businessentityid, businessname, etlsource, insertdatetime) SELECT (SELECT MAX(COALESCE(businessentityid,1)) FROM datamart.businessentityid)+row_number () over() as businessentityid, steammarketplace.full_data::json->>'developer' as businessname,'steammarketplace_scraperdataTOdatamart' as etlsource current_timestamp as insertdatetime FROM scraperdata.steammarketplace as steammarketplace WHERE steammarketplace.full_data::json->>'developer' IS NOT NULL ON CONFLICT DO NOTHING;")
+            except:
+                connection.commit()
+
+    def InsertMarketitemRelationship(
+        source
+        ):
+        if source is 'sonymarketplace':
+            connection = DataLoader.ConnectEtl()
+            cur = connection.cursor()
+            try: # insert for publisher info into business entity
+                cur.execute("INSERT INTO datamart.MarketItemRelationship (marketplaceitemrelationshipid,relationshiptypeid,businessentityid, marketplaceitemid,etlsource,insertdatetime) SELECT (SELECT MAX(marketplaceitemrelationshipid) FROM datamart.marketplaceitemrelationship)+row_number() over() as marketplaceitemrelationshipid, relationshiptype.relationshiptypeid, businessentity.businessentityid, marketplaceitem.marketplaceitemid, 'sonymarketplace_scraperdataTOdatamart' as etlsource, current_timestamp as insertdatetime FROM scraperdata.sonywebsite sonywebsite LEFT JOIN datamart.console console ON COALESCE(TRIM(split_part(sonywebsite.console_type,'|',1)),'Unknown') = console.consolename LEFT JOIN datamart.marketplaceitem marketplaceitem ON sonywebsite.game_name = marketplaceitem.title AND console.consoleid = marketplaceitem.consoleid LEFT JOIN datamart.RelationshipType relationshiptype ON 'Unknown' = relationshiptype.relationshipname ON CONFLICT DO NOTHING;")
+            except:
+                connection.commit()
+        if source is 'steammarketplace':
+            connection = DataLoader.ConnectEtl()
+            cur = connection.cursor()
+            try:
+                cur.execute()
+            except:
+                connection.commit()
+
 
     #def InsertConsole(self,source): Not necessary at this time. Faster to manually insert.
