@@ -1,20 +1,20 @@
 Mappings
 1. SteamMarketplace
-SourceType|Destination
+-SourceType|Destination-
 'sentiment'|category.name
-'title'|marketplaceitem.title
+'title'|marketplaceitem.title - COMPLETE
 'specs'|category
 'reviews_url'|marketentry.reviewsurl
 'genres'|category
-'app_name'|marketplaceitem.alternatename
+'app_name'|marketplaceitem.alternatename - COMPLETE
 'gameImage'|marketplaceentry
 'price'|marketplaceentry
-'developer'|businessname
+'developer'|businessname - COMPLETE
 'early_access'|category
 'metascore'|category
-'publisher'|businessname
+'publisher'|businessname - COMPLETE
 'url'|marketplaceentry
 'tags'|category
-'release_date'|gameentry
+'release_date'| marketplaceentry
 'discount_price'|category
 'id'|category

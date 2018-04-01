@@ -1,9 +1,25 @@
---Insert for marketitem. (WIP)
-SELECT (select COALESCE(max(marketplaceitemid),1) from datamart.marketplaceitem)+row_number() over () as marketplaceitemid, 
-	COALESCE(full_data::json->>'title',full_data::json->>'app_name') as title,
-	CASE WHEN full_data::json->>'title' IS NULL THEN full_data::json->>'app_name' ELSE NULL END AS alternatename,
-    console.consoleid,
-    
+--insert for market entry
+INSERT INTO datamart.marketentry (marketentryid,releasedate, sourceid,primaryprice,sourceurl,gameimageurl,reviewsurl,marketplaceitemid, etlsource, insertdatetime) 
+SELECT (select COALESCE(max(marketentryid),1) from datamart.marketentry)+row_number() over () as marketplaceitemid,
+    steammarketplace.full_data::json->>'release_date' as releasedate,
+    as sourceid,
+    steammarketplace.full_data::json->>'price' as primaryprice,
+    steammarketplace.full_data::json->>'developer' as sourceurl,
+    steammarketplace.full_data::json->>'developer' as gameimageurl,
+    steammarketplace.full_data::json->>'developer' as reviewsurl,
+    as marketplaceitemid, 
+    'steammarketplace_scraperdataTOdatamart' as etlsource,
+    current_timestamp as insertdatetime
+FROM scraperdata.steammarketplace steammarketplace
+INNER JOIN datamart.console console
+ON 'PC' = console.consolename
+INNER JOIN datamart.marketplaceitem marketplaceitem
+ON COALESCE(steammarketplace_publisher.full_data::json->>'title',steammarketplace_publisher.full_data::json->>'app_name') = marketplaceitem.title
+AND CASE WHEN steammarketplace_publisher.full_data::json->>'title' IS NOT NULL THEN steammarketplace_publisher.full_data::json->>'app_name' ELSE NULL END = marketplaceitem.alternatename
+AND console.consoleid = marketplaceitem.consoleid
+INNER JOIN datamart.source etlsource
+ON 'Steam Marketplace' = etlsource.sourcename;
+
 
 
 
