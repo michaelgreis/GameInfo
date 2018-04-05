@@ -1,25 +1,15 @@
---insert for market entry
-INSERT INTO datamart.marketentry (marketentryid,releasedate, sourceid,primaryprice,sourceurl,gameimageurl,reviewsurl,marketplaceitemid, etlsource, insertdatetime) 
-SELECT (select COALESCE(max(marketentryid),1) from datamart.marketentry)+row_number() over () as marketplaceitemid,
-    steammarketplace.full_data::json->>'release_date' as releasedate,
-    as sourceid,
-    steammarketplace.full_data::json->>'price' as primaryprice,
-    steammarketplace.full_data::json->>'developer' as sourceurl,
-    steammarketplace.full_data::json->>'developer' as gameimageurl,
-    steammarketplace.full_data::json->>'developer' as reviewsurl,
-    as marketplaceitemid, 
-    'steammarketplace_scraperdataTOdatamart' as etlsource,
-    current_timestamp as insertdatetime
-FROM scraperdata.steammarketplace steammarketplace
-INNER JOIN datamart.console console
-ON 'PC' = console.consolename
-INNER JOIN datamart.marketplaceitem marketplaceitem
-ON COALESCE(steammarketplace_publisher.full_data::json->>'title',steammarketplace_publisher.full_data::json->>'app_name') = marketplaceitem.title
-AND CASE WHEN steammarketplace_publisher.full_data::json->>'title' IS NOT NULL THEN steammarketplace_publisher.full_data::json->>'app_name' ELSE NULL END = marketplaceitem.alternatename
-AND console.consoleid = marketplaceitem.consoleid
-INNER JOIN datamart.source etlsource
-ON 'Steam Marketplace' = etlsource.sourcename;
 
+--Insert for categories & screwing around with json.
+SELECT *,
+	TRIM(BOTH '[]"' FROM unnest(categoryname))
+FROM (SELECT json_object_keys(full_data) as object_keys,
+	--json_each(full_data::json->>json_object_keys(full_data)),
+    full_data->>json_object_keys(full_data),
+	string_to_array(full_data->>json_object_keys(full_data),'", "','["') as categoryname
+	--json_array_elements(full_data)
+FROM scraperdata.steammarketplace steammarketplace
+--INNER JOIN datamart.categorytype categorytype
+WHERE id = '427570') AS A
 
 
 

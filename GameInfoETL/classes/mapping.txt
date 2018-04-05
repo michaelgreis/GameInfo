@@ -4,17 +4,17 @@ Mappings
 'sentiment'|category.name
 'title'|marketplaceitem.title - COMPLETE
 'specs'|category
-'reviews_url'|marketentry.reviewsurl
+'reviews_url'|marketentry.reviewsurl - COMPLETE
 'genres'|category
 'app_name'|marketplaceitem.alternatename - COMPLETE
-'gameImage'|marketplaceentry
-'price'|marketplaceentry
+'gameImage'|marketplaceentry - COMPLETE
+'price'|marketplaceentry - COMPLETE
 'developer'|businessname - COMPLETE
 'early_access'|category
 'metascore'|category
 'publisher'|businessname - COMPLETE
-'url'|marketplaceentry
+'url'|marketplaceentry - COMPLETE
 'tags'|category
-'release_date'| marketplaceentry
+'release_date'| marketplaceentry - COMPLETE
 'discount_price'|category
 'id'|category

@@ -13,4 +13,4 @@ CREATE TABLE datamart.MarketEntry (
     InsertDateTime TIMESTAMP DEFAULT current_timestamp
 );
 
-CREATE UNIQUE INDEX NaturalKey_MarketEntry ON datamart.MarketEntry (SourceId, PrimaryPrice,MarketplaceItemId);
+CREATE UNIQUE INDEX NaturalKey_MarketEntry ON datamart.MarketEntry (SourceId, PrimaryPrice,MarketplaceItemId,releaseDate);
