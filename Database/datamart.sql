@@ -26,7 +26,7 @@ GRANT USAGE ON SCHEMA datamart TO datamartetl;
 GRANT USAGE ON SCHEMA scraperdata TO datamartetl;
 --GRANT USAGE ON SCHEMA etltables TO datamartetl; --Schema no longer exists. Since foreign data wrapper removed
 GRANT CONNECT ON DATABASE landingzone TO datamartetl;
-GRANT CONNECT ON DATABASE datamart TO datamartetl;
+--GRANT CONNECT ON DATABASE datamart TO datamartetl;
 
 --grants privleges to the table containing the fwd objects which allow lookups to the datamart schema for FK relationships.
 CREATE USER MAPPING FOR datamartetl

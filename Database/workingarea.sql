@@ -43,6 +43,10 @@ SELECT *
 FROM datamart.source
 LIMIT 10;
 
+SELECT *
+FROM datamart.marketplaceitemrelationship
+LIMIT 10;
+
 
 --3-20-2018
 INSERT INTO etltables.category (categoryid, categoryname, marketentryid, categorytypeid)

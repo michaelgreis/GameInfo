@@ -2,7 +2,7 @@
 
 CREATE TABLE datamart.MarketEntry (
     MarketEntryId SERIAL PRIMARY KEY,
-    ReleaseDate DATE NULL ,
+    ReleaseDate VARCHAR(25) NULL ,
     SourceId INTEGER NULL, --Changed from sourcemarketidentifier (mismatch on the source table's name)
     PrimaryPrice DECIMAL(6,2) NULL,
     SourceUrl VARCHAR(300) NULL,
