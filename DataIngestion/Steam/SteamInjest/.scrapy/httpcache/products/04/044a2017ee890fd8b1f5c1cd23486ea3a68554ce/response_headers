@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/237619/Batman_Arkham_Origins__Initiation/?snr=1_7_7_230_150_1319
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 3153226813
+Date: Sun, 27 May 2018 15:13:29 GMT

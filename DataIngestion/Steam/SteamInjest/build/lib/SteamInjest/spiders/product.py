@@ -25,7 +25,7 @@ def load_product(response):
     found_id = re.findall('/app/(.*?)/', response.url)
     if found_id:
         id = found_id[0]
-        reviews_url = f"http://steamcommunity.com/app/{id}/reviews/?browsefilter=mostrecent&p=1"
+        reviews_url = str('http://steamcommunity.com/app/'+id+'/reviews/?browsefilter=mostrecent&p=1')
         loader.add_value('reviews_url', reviews_url)
         loader.add_value('id', id)
 
@@ -98,7 +98,7 @@ class ProductSpider(CrawlSpider):
     def parse_product(self, response):
         # Circumvent age selection form.
         if '/agecheck/app' in response.url:
-            logger.debug(f"Form-type age check triggered for {response.url}.")
+            logger.debug(str('Form-type age check triggered for '+response.url+'.'))
 
             form = response.css('#agegate_box form')
 

@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/215253/Sleeping_Dogs__Triad_Enforcer_Pack/?snr=1_7_7_230_150_1379
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 3153243534
+Date: Sun, 27 May 2018 15:17:53 GMT

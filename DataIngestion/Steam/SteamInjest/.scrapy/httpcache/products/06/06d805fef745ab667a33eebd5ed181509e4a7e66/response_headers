@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/23553/Earth_Defense_Force_Tactician_Advanced_Tech_Package/?snr=1_7_7_230_150_1420
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 455651930
+Date: Sun, 27 May 2018 15:08:30 GMT

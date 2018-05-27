@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/759530/Struckd__3D_Game_Creator/?snr=1_7_7_230_150_19
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 2179376738
+Date: Sun, 27 May 2018 16:58:25 GMT

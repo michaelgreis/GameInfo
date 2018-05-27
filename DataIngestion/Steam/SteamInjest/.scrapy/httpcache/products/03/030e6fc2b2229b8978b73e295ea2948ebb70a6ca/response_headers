@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/210896/Crusader_Kings_II_Byzantine_Unit_Pack/?snr=1_7_7_230_150_1388
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 1396251932
+Date: Sun, 27 May 2018 15:18:52 GMT

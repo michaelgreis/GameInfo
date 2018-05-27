@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/search/?page=1421&sort_by=Released_DESC&sort_order=DESC&special_categories=
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 4010724713
+Date: Sun, 27 May 2018 02:04:14 GMT

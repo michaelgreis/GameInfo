@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/90400/Blue_Toad_Murder_Files_The_Mysteries_of_Little_Riddle/?snr=1_7_7_230_150_1445
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 1396274445
+Date: Sun, 27 May 2018 15:24:45 GMT

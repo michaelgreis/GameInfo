@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/24200/DC_Universe_Online/?snr=1_7_7_230_150_1424
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 4013659890
+Date: Sun, 27 May 2018 15:08:28 GMT

@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/55389/Saints_Row_The_Third__Money_Shot_Pack/?snr=1_7_7_230_150_1416
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 2796456950
+Date: Sun, 27 May 2018 15:20:39 GMT

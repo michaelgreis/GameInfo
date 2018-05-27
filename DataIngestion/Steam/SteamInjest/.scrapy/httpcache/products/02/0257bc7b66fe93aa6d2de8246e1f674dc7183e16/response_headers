@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/215001/Victoria_II_Heart_of_Darkness/?snr=1_7_7_230_150_1358
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 455683997
+Date: Sun, 27 May 2018 15:16:31 GMT

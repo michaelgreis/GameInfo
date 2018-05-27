@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/42902/Hearts_of_Iron_III_Semper_Fi_Dies_Irae_Gtterdmmerung/?snr=1_7_7_230_150_1437
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 3914545488
+Date: Sun, 27 May 2018 15:22:09 GMT

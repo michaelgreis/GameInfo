@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/230691/Lords_of_Football_Super_Training/?snr=1_7_7_230_150_1347
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 455679773
+Date: Sun, 27 May 2018 15:15:23 GMT

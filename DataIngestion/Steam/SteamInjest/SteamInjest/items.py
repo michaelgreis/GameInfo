@@ -53,7 +53,7 @@ def standardize_date(x):
             fmt_fail = True
 
     if fmt_fail:
-        logger.debug(f"Could not process date {x}")
+        logger.debug(str("Could not process date "+x))
 
     return x
 

@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/agecheck/app/277673/?snr=1_7_7_230_150_1292
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 4013669779
+Date: Sun, 27 May 2018 15:10:59 GMT

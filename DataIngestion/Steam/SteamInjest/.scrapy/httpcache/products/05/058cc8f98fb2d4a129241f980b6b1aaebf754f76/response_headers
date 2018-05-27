@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/35101/Just_Cause_2_Black_Market_Aerial_Pack_DLC/?snr=1_7_7_230_150_1458
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 2175547887
+Date: Sat, 26 May 2018 23:44:24 GMT

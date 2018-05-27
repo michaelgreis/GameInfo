@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/201100/Post_Apocalyptic_Mayhem_DLC__Chaos_Pack/?snr=1_7_7_230_150_1427
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 4013710262
+Date: Sun, 27 May 2018 15:21:30 GMT

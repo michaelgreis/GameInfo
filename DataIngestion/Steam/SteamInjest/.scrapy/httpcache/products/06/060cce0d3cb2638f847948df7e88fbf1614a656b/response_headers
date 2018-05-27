@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/253350/Tiny_Barbarian_DX/?snr=1_7_7_230_150_1319
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 4061653295
+Date: Sun, 27 May 2018 15:13:44 GMT

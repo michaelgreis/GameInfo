@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/215915/Deck_Unlock__Enchanters_Arsenal/?snr=1_7_7_230_150_1318
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 2178960154
+Date: Sun, 27 May 2018 15:13:37 GMT

@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/786960/Star_Epica_3720/?snr=1_7_7_230_150_16
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 4062067952
+Date: Sun, 27 May 2018 16:58:40 GMT

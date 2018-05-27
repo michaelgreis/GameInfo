@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/258815/Talisman__Character_Pack_3__Devils_Minion/?snr=1_7_7_230_150_1291
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 2796421037
+Date: Sun, 27 May 2018 15:11:15 GMT

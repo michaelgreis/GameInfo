@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/91700/EYE_Divine_Cybermancy/?snr=1_7_7_230_150_1432
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 4061683654
+Date: Sun, 27 May 2018 15:21:58 GMT

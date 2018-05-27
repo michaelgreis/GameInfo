@@ -1,0 +1,10 @@
+Server: Apache
+Expires: Mon, 26 Jul 1997 05:00:00 GMT
+Cache-Control: no-cache
+Content-Security-Policy: default-src blob: data: https: 'unsafe-inline' 'unsafe-eval'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://steamstore-a.akamaihd.net/ https://steamstore-a.akamaihd.net/ *.google-analytics.com https://www.gstatic.com; object-src 'none'; connect-src 'self' http://store.steampowered.com https://store.steampowered.com http://127.0.0.1:27060 https://steamcommunity.com/ https://steamcommunity.com/ *.google-analytics.com; frame-src 'self' steam:  http://www.youtube.com https://www.youtube.com https://www.google.com https://sketchfab.com https://player.vimeo.com embed.nicovideo.jp www.escapistmagazine.com player.youku.com www.bilibili.com https://steamcommunity.com/;
+X-Frame-Options: DENY
+Vary: Accept-Encoding
+Content-Encoding: gzip
+Content-Type: text/html; charset=UTF-8
+Date: Sun, 27 May 2018 16:16:42 GMT
+Set-Cookie: recentapps=%7B%22626780%22%3A1527437802%2C%22332740%22%3A1527437799%2C%22623670%22%3A1527437796%2C%22582110%22%3A1527437793%2C%22628980%22%3A1527437789%2C%22621180%22%3A1527437785%2C%22597370%22%3A1527437781%2C%22585240%22%3A1527437778%2C%22521720%22%3A1527437775%2C%22615390%22%3A1527437772%7D; expires=Sat, 25-Aug-2018 16:16:42 GMT; Max-Age=7776000; path=/

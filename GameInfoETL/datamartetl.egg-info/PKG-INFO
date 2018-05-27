@@ -1,0 +1,11 @@
+Metadata-Version: 1.0
+Name: datamartetl
+Version: 1.0
+Summary: All ETLs for bringing data from raw into normalized model.
+Home-page: https://github.com/michaelgreis/GameInfo/tree/master/GameInfoETL
+Author: Michael Greis
+Author-email: michael@letus.build
+License: UNKNOWN
+Description-Content-Type: UNKNOWN
+Description: UNKNOWN
+Platform: UNKNOWN

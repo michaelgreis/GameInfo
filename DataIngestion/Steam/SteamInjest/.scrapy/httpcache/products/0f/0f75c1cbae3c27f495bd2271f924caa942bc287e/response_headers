@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/208369/Train_Simulator_EWS_Class_67_Loco_AddOn/?snr=1_7_7_230_150_1398
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 4061635715
+Date: Sun, 27 May 2018 15:08:55 GMT

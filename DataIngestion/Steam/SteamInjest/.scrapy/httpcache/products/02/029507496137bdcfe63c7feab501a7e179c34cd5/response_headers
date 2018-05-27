@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/231475/COH_2__German_Skin_H_Field_Applied_Whitewash_Pattern/?snr=1_7_7_230_150_1351
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 3914521309
+Date: Sun, 27 May 2018 15:15:51 GMT

@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/222064/Rocksmith__Foo_Fighters__Best_of_You/?snr=1_7_7_230_150_1373
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 3914527850
+Date: Sun, 27 May 2018 15:17:26 GMT

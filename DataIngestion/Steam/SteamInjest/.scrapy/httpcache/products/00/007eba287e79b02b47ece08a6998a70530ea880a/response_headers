@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/786100/Maestro_Notes_of_Life_Collectors_Edition/?snr=1_7_7_230_150_18
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 3914556880
+Date: Sun, 27 May 2018 15:25:09 GMT

@@ -1,0 +1,6 @@
+Referer: https://store.steampowered.com/search/?page=893&sort_by=Released_DESC&sort_order=DESC&special_categories=
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en
+User-Agent: Scrapy/1.3.3 (+http://scrapy.org)
+Accept-Encoding: gzip,deflate
+Cookie: steamCountry=US%7Cb63ffc3c771e9245b74f9714afb3ee5d; browserid=1282831569827495709; sessionid=b0ee7a57dc1c641d3106fb18; recentapps=%7B%22533230%22%3A1527436818%2C%22463540%22%3A1527436815%2C%22467490%22%3A1527436811%2C%22402750%22%3A1527436808%2C%22403290%22%3A1527436804%2C%22537153%22%3A1527436800%2C%22531890%22%3A1527436796%2C%22537155%22%3A1527436793%2C%22422900%22%3A1527436790%2C%22479990%22%3A1527436786%7D

@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/246420/Kingdom_Rush/?snr=1_7_7_230_150_1312
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 455670152
+Date: Sun, 27 May 2018 15:13:01 GMT

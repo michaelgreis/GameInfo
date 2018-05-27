@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/216173/AirMech_Soundtrack/?snr=1_7_7_230_150_1379
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 4061669141
+Date: Sun, 27 May 2018 15:17:47 GMT

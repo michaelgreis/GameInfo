@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/281350/US_and_THEM/?snr=1_7_7_230_150_1294
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 4061645592
+Date: Sun, 27 May 2018 15:11:29 GMT

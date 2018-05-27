@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/200960/Geneforge_1/?snr=1_7_7_230_150_1502
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 4062071813
+Date: Sun, 27 May 2018 16:59:39 GMT

@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/229190/Painkiller_Hell__Damnation_Medieval_Horror/?snr=1_7_7_230_150_1369
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 4061667283
+Date: Sun, 27 May 2018 15:17:17 GMT

@@ -1,0 +1,10 @@
+setup.py
+GameInfoEtl/DataMartEtl.py
+GameInfoEtl/SonyETL.py
+GameInfoEtl/SteamETL.py
+GameInfoEtl/__init__.py
+datamartetl.egg-info/PKG-INFO
+datamartetl.egg-info/SOURCES.txt
+datamartetl.egg-info/dependency_links.txt
+datamartetl.egg-info/not-zip-safe
+datamartetl.egg-info/top_level.txt

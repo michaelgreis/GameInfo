@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/45750/Lost_Planet_2/?snr=1_7_7_230_150_1449
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 2179007325
+Date: Sun, 27 May 2018 15:25:50 GMT

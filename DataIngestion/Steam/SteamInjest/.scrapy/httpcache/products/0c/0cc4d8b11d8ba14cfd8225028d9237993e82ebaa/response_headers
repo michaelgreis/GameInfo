@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/264683/Kings_Bounty_Legions__True_Tactician_Ultimate_Pack/?snr=1_7_7_230_150_1316
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 3153215709
+Date: Sun, 27 May 2018 15:10:28 GMT

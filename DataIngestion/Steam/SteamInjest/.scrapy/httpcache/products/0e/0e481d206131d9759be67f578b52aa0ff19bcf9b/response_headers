@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/276460/Tales_From_The_Dragon_Mountain_2_The_Lair/?snr=1_7_7_230_150_1296
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 4061645471
+Date: Sun, 27 May 2018 15:11:27 GMT

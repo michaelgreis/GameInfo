@@ -1,0 +1,13 @@
+setup.py
+Sony/__init__.py
+Sony/items.py
+Sony/middlewares.py
+Sony/pipelines.py
+Sony/settings.py
+SonyScraper.egg-info/PKG-INFO
+SonyScraper.egg-info/SOURCES.txt
+SonyScraper.egg-info/dependency_links.txt
+SonyScraper.egg-info/entry_points.txt
+SonyScraper.egg-info/top_level.txt
+Sony/spiders/__init__.py
+Sony/spiders/sony_scrapy.py

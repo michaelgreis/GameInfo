@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/508165/Mystic_Destinies_Serendipity_of_Aeons__Deluxe_Edition/?snr=1_7_7_230_150_13
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 4014099901
+Date: Sun, 27 May 2018 16:59:30 GMT

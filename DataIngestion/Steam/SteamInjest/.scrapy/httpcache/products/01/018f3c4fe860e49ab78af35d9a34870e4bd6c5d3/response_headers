@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/25763/Madballs_Scorched_Evolution_Skin_Rollup/?snr=1_7_7_230_150_1453
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 2179379986
+Date: Sun, 27 May 2018 16:59:10 GMT

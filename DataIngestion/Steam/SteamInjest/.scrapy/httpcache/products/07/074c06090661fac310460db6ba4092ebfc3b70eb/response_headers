@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/200189/Worms_Revolution_Funfair_DLC/?snr=1_7_7_230_150_1382
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 2796447639
+Date: Sun, 27 May 2018 15:18:24 GMT

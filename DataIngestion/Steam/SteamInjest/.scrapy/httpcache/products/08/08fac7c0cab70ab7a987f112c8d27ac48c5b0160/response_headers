@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/202690/Hegemony_Gold_Wars_of_Ancient_Greece/?snr=1_7_7_230_150_1413
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 3914492298
+Date: Sun, 27 May 2018 15:08:43 GMT

@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/205634/Tropico_4_Vigilante_DLC/?snr=1_7_7_230_150_1373
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 4061667764
+Date: Sun, 27 May 2018 15:17:25 GMT

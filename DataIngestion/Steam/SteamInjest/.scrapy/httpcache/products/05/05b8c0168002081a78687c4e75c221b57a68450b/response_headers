@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/203343/Jagged_Alliance_Back_in_Action_DLC_Urban_Specialist_Kit/?snr=1_7_7_230_150_1358
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 4061664883
+Date: Sun, 27 May 2018 15:16:35 GMT

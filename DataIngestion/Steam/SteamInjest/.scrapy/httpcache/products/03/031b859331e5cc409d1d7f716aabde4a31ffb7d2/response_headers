@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/271468/Rocksmith_2014__Matchbox_Twenty__Unwell/?snr=1_7_7_230_150_1292
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 2796420495
+Date: Sun, 27 May 2018 15:11:04 GMT

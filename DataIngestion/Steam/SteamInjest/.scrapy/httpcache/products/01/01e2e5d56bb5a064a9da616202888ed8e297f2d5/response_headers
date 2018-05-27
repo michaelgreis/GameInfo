@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/206147/Rocksmith__Queen__Killer_Queen/?snr=1_7_7_230_150_1387
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 3914531802
+Date: Sun, 27 May 2018 15:18:42 GMT

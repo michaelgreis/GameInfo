@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/240500/DCS_UH1H_Huey/?snr=1_7_7_230_150_1340
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 2178963776
+Date: Sun, 27 May 2018 15:14:38 GMT

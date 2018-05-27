@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/65730/Take_On_Helicopters/?snr=1_7_7_230_150_1422
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 4061680905
+Date: Sun, 27 May 2018 15:21:07 GMT

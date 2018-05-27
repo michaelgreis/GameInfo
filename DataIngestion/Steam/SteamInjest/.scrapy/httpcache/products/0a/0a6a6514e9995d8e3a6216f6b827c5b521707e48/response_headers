@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/268260/Lets_Sing/?snr=1_7_7_230_150_1303
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 2796425880
+Date: Sun, 27 May 2018 15:12:29 GMT

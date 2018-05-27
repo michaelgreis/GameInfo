@@ -1,0 +1,8 @@
+Server: Apache
+Location: https://store.steampowered.com/app/206168/Rocksmith__Grace_Potter_and_the_Nocturnals__Paris_Ooh_La_La/?snr=1_7_7_230_150_1387
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Content-Type: text/html; charset=UTF-8
+Accept-Ranges: bytes
+X-Varnish: 4061672215
+Date: Sun, 27 May 2018 15:18:38 GMT
