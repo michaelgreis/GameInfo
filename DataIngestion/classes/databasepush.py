@@ -53,7 +53,7 @@ class datapush():
                 try:
                     cur.execute("INSERT INTO steammarketplace(id, full_data) VALUES(%s,%s);",(self.default_value(entry['id']),self.default_value(json.dumps(entry))))
                 except:
-                    cur.execute("INSERT INTO steammarketplace(id,full_data) VALUES(%s,%s);",(self.default__value(None),self.default_value(json.dumps(entry))))
+                    cur.execute("INSERT INTO steammarketplace(id,full_data) VALUES(%s,%s);",(self.default_value(None),self.default_value(json.dumps(entry))))
             else:
                 return 'Error. No insert script for data source.'
         except:

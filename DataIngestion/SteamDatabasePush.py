@@ -18,6 +18,6 @@ for filename in os.listdir(os.getcwd()):
         #break #just used for testing. don't want it to run through every file.
         os.remove(filename)
     except:
-        os.rename(filename,"rejects/"+filename)
+        os.rename(filename,"/crawlerdata/steam/rejects/"+filename)
         print('failed to read '+filename)
         raise

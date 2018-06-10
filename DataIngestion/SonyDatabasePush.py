@@ -20,6 +20,6 @@ for filename in os.listdir(os.getcwd()):
         dp.push_data(json_data, data_source)
         os.remove(filename)
     except:
-        os.rename(filename,"rejects/"+filename)
+        os.rename(filename,"/crawlerdata/sony/rejects/"+filename)
         print('failed to push '+filename,sys.exc_info()[0])
         #break #just used for testing. don't want it to run through every file.
