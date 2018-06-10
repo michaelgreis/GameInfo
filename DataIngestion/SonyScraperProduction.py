@@ -7,7 +7,7 @@ import os
 
 print("Starting Scraper")
 source_name='sonymarketplace'
-data_output_location = "/crawler/data/"
+data_output_location = "/crawlerdata/sony/"
 print("Variables Loaded")
 
 os.chdir(data_output_location)

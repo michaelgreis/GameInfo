@@ -12,7 +12,7 @@ import json
 class SteamInjestPipeline(object):
     def process_item(self, item, spider):
         line = dict(item)
-        with open('/crawlerSteam/steam'+str(time.time())+'.json','w',encoding='utf-8') as outfile:
+        with open('/crawlerdata/steam/steam'+str(time.time())+'.json','w',encoding='utf-8') as outfile:
            #outfile.write('['+str(dict(item)).replace("{'",'{"').replace("'}",'"}').replace(",'",',"').replace("':",'":').replace(" '",' "').replace("',",'",').replace("['",'["').replace("']",'"]')+']')
            outfile.write('['+json.dumps(line)+']')
         outfile.close()

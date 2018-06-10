@@ -11,6 +11,6 @@ import json
 class SonyPipeline(object):
     def process_item(self, item, spider):
         line = dict(item)
-        with open('/crawler/sony'+str(time.time())+'.json','w',encoding='utf-8') as outfile:
+        with open('/crawlerdata/sony/sony'+str(time.time())+'.json','w',encoding='utf-8') as outfile:
             outfile.write(json.dumps(line))
         return item

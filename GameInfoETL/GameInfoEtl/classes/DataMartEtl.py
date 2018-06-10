@@ -8,7 +8,7 @@ class DataLoader():
 
 
     def MarketplaceItem(
-        source
+        self,source
         ):
         if source is 'sonymarketplace':
             connection = DataLoader.ConnectEtl()
@@ -30,7 +30,7 @@ class DataLoader():
 
 
     def InsertMarketEntry(
-        source
+        self,source
         ):
         if source is 'sonymarketplace':
             connection = DataLoader.ConnectEtl()
@@ -53,7 +53,7 @@ class DataLoader():
 
 
     def InsertCategory(
-        source
+        self,source
         ):
         if source is 'sonymarketplace': # logic contained here is for two categories. Plus sale and item type (bundle, game, etc.). The plus sale has logic to convert "free" to 0, and currency to a number.
             connection = DataLoader.ConnectEtl()
@@ -80,7 +80,7 @@ class DataLoader():
 
     
     def InsertCategoryType(
-        source
+        self,source
         ):
         if source is 'sonymarketplace': #SonyMarketplace uses the schema as the driver for the load of this table.
             connection = DataLoader.ConnectEtl()
@@ -94,7 +94,7 @@ class DataLoader():
         connection.close()
 
     def InsertBusinessEntity(
-        source
+        self,source
         ): #necessary for the steam marketplace dataset.
         if source is 'steammarketplace':
             connection = DataLoader.ConnectEtl()
@@ -112,7 +112,7 @@ class DataLoader():
         connection.close()
 
     def InsertMarketitemRelationship(
-        source
+        self,source
         ):
         if source is 'sonymarketplace':
             connection = DataLoader.ConnectEtl()

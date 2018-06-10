@@ -1,4 +1,7 @@
 from classes.DataMartEtl import DataLoader
+import sys
+
+EtlTest = DataLoader()
 
 try:
     EtlTest.MarketplaceItem('steammarketplace')
@@ -7,4 +10,4 @@ try:
     EtlTest.InsertMarketitemRelationship('steammarketplace')
     EtlTest.InsertBusinessEntity('steammarketplace')
 except:
-    print('steammarketplace - failed.')
+    print('steammarketplace - failed.'+str(sys.exc_info()[0]))

@@ -1,4 +1,7 @@
 from classes.DataMartEtl import DataLoader
+import sys
+
+EtlTest = DataLoader()
 
 try:
     EtlTest.MarketplaceItem('sonymarketplace')

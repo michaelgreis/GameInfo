@@ -7,8 +7,15 @@
 
 import scrapy
 
+from scrapy.loader import ItemLoader
 
 class SonyItem(scrapy.Item):
-    # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    image = scrapy.Field()
+    badge_sale = scrapy.Field()
+    game_name = scrapy.Field()
+    plus_sale = scrapy.Field()
+    console_type = scrapy.Field()
+    item_type = scrapy.Field()
+
+class SonyItemLoader(ItemLoader):
+    default_output_processor = scrapy.loader.processors.Compose(scrapy.loader.processors.TakeFirst())

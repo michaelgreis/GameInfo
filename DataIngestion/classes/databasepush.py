@@ -1,5 +1,6 @@
 import psycopg2 #needed for the connection to the postgresql database
 import json #needed to read scraper data
+import sys
 
 class datapush():
     def __init__(
@@ -38,27 +39,26 @@ class datapush():
 
 #this pushes the sony data into the right table. Going to need to be re-written for each source that we have. Or re-written to use a config file.
     def push_data(
-        self,data_to_load,data_source
+        self,entry,data_source
     ):
         conn = self.connect_to_db()
         cur = conn.cursor()
         cur.execute("SET search_path TO scraperdata")
         print('Cursor created successfully')
-        for entry in data_to_load:
-            try: #this contains the different insert script needed to move the data into the database from the different sources.
-                if data_source=='sonymarketplace':
-                    cur.execute("INSERT INTO sonywebsite(image,badge_sale,game_name,plus_sale,console_type,item_type) VALUES(%s,%s,%s,%s,%s,%s) ON CONFLICT ON CONSTRAINT unique_row DO NOTHING;",(self.default_value(entry['image']),self.default_value(entry['badge_sale']),self.default_value(entry['game_name']),self.default_value(entry['plus_sale']),self.default_value(entry['console_type']),self.default_value(entry['item_type']))) #this is what actually inserts to the database.
-                elif data_source=='steammarketplace':
-                    try:
-                        cur.execute("INSERT INTO steammarketplace(id, full_data) VALUES(%s,%s);",(self.default_value(entry['id']),self.default_value(json.dumps(entry))))
-                        break
-                    except:
-                        cur.execute("INSERT INTO steammarketplace(id,full_data) VALUES(%s,%s);",(self.default__value(None),self.default_value(json.dumps(entry))))
-                else:
-                    return 'Error. No insert script for data source.'
-            except:
-                print('Failed to write '+str(entry))
-                raise
+        #for entry in data_to_load:
+        try: #this contains the different insert script needed to move the data into the database from the different sources.
+            if data_source=='sonymarketplace':
+                cur.execute("INSERT INTO sonywebsite(image,badge_sale,game_name,plus_sale,console_type,item_type) VALUES(%s,%s,%s,%s,%s,%s) ON CONFLICT ON CONSTRAINT unique_row DO NOTHING;",(self.default_value(entry['image']),self.default_value(entry['badge_sale']),self.default_value(entry['game_name']),self.default_value(entry['plus_sale']),self.default_value(entry['console_type']),self.default_value(entry['item_type'])))#this is what actually inserts to the database.
+            elif data_source=='steammarketplace':
+                try:
+                    cur.execute("INSERT INTO steammarketplace(id, full_data) VALUES(%s,%s);",(self.default_value(entry['id']),self.default_value(json.dumps(entry))))
+                except:
+                    cur.execute("INSERT INTO steammarketplace(id,full_data) VALUES(%s,%s);",(self.default__value(None),self.default_value(json.dumps(entry))))
+            else:
+                return 'Error. No insert script for data source.'
+        except:
+            print('Failed to write '+str(entry),sys.exc_info()[0])
+            raise
         conn.commit()
         cur.close()
         conn.close()
