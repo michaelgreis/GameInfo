@@ -1,6 +1,7 @@
 import psycopg2 #needed for the connection to the postgresql database
 import json #needed to read scraper data
 import sys
+from datetime import datetime, timedelta #import for the historical data cleaning.
 
 class datapush():
     def __init__(
@@ -59,6 +60,35 @@ class datapush():
         except:
             print('Failed to write '+str(entry),sys.exc_info()[0])
             raise
+        conn.commit()
+        cur.close()
+        conn.close()
+
+#this clears out old data to allow the scripts to run against a reasonable amount of data.
+    def history_removal(
+        self,data_source,day_delete_number
+    ):
+        days_number = day_delete_number
+        conn = self.connect_to_db()
+        cur = conn.cursor()
+        cur.execute("SET search_path TO scraperdata")
+        print('Cursor created successfully')
+        deletion_end_date = datetime.date(datetime.now() - timedelta(days=days_number))
+        try:
+            if data_source=='sonymarketplace':
+                try:
+                    cur.execute("DELETE FROM sonywebsite WHERE insert_time < %s;",(deletion_end_date,))
+                except:
+                    print('Sonywebsite failed',sys.exc_info()[0])
+            elif data_source=='steammarketplace':
+                try:
+                    cur.execute("DELETE FROM steammarketplace WHERE insert_time < %s;",(deletion_end_date,))
+                except:
+                    print('Steammarketplace failed.',sys.exc_info()[0])
+            else:
+                return 'Error. No datasource for history cleanup passed'
+        except:
+            print('Failed to execute historical cleanup.')
         conn.commit()
         cur.close()
         conn.close()

@@ -32,7 +32,7 @@ FROM datamart.console
 LIMIT 10;
 
 SELECT *
-FROM datamart.marketitem
+FROM datamart.marketentry
 LIMIT 10;
 
 SELECT *
@@ -46,6 +46,31 @@ LIMIT 10;
 SELECT *
 FROM datamart.marketplaceitemrelationship
 LIMIT 10;
+
+--Select max date
+SELECT MAX(insertdatetime) as InsertTime, 'businessentity'
+FROM datamart.businessentity
+UNION ALL
+SELECT MAX(insertdatetime) as InsertTime, 'category'
+FROM datamart.category
+UNION ALL
+SELECT MAX(insertdatetime) as InsertTime, 'categorytype'
+FROM datamart.categorytype
+UNION ALL
+SELECT MAX(insertdatetime) as InsertTime, 'console'
+FROM datamart.console
+UNION ALL
+SELECT MAX(insertdatetime) as InsertTime, 'marketitem'
+FROM datamart.marketentry
+UNION ALL
+SELECT MAX(insertdatetime) as InsertTime, 'marketplaceitem'
+FROM datamart.marketplaceitem
+UNION ALL
+SELECT MAX(insertdatetime) as InsertTime, 'source'
+FROM datamart.source
+UNION ALL
+SELECT MAX(insertdatetime) as InsertTime, 'marketplaceitemrelationship'
+FROM datamart.marketplaceitemrelationship;
 
 
 --3-20-2018

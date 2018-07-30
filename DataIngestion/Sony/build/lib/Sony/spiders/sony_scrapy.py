@@ -73,7 +73,7 @@ class SonyScraperSpider(scrapy.spiders.CrawlSpider):
     start_urls=['https://store.playstation.com/en-us/grid/STORE-MSF77008-ALLGAMES/1']
     allowed_domains=['store.playstation.com']
     rules = (
-        scrapy.spiders.Rule(scrapy.linkextractors.LinkExtractor(),
+        scrapy.spiders.Rule(scrapy.linkextractors.LinkExtractor(allow=(r"store.playstation.com/en-us/grid/STORE-MSF77008-ALLGAMES/")),
         callback='parse_product',
         follow=True),
     )

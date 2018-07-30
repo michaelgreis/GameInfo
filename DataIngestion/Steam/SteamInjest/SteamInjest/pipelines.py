@@ -14,6 +14,6 @@ class SteamInjestPipeline(object):
         line = dict(item)
         with open('/crawlerdata/steam/steam'+str(time.time())+'.json','w',encoding='utf-8') as outfile:
            #outfile.write('['+str(dict(item)).replace("{'",'{"').replace("'}",'"}').replace(",'",',"').replace("':",'":').replace(" '",' "').replace("',",'",').replace("['",'["').replace("']",'"]')+']')
-           outfile.write('['+json.dumps(line)+']')
+           outfile.write(json.dumps(line))
         outfile.close()
         return item

@@ -32,10 +32,9 @@ def load_product(response):
     # Publication details.
     details = response.css('.details_block').extract_first()
     try:
-        details = details.split('<br>')
-
+        details = details.split('<b>')
         for line in details:
-            line = re.sub('<[^<]+?>', '', line)  # Remove tags.
+            line = re.sub('<.*?>','',line).strip()
             line = re.sub('[\r\t\n]', '', line).strip()
             for prop, name in [
                 ('Title:', 'title'),
@@ -49,7 +48,7 @@ def load_product(response):
                     loader.add_value(name, item)
     except:
         pass
-
+    
     loader.add_css('app_name', '.apphub_AppName ::text')
     loader.add_css('specs', '.game_area_details_specs a ::text')
     loader.add_css('tags', 'a.app_tag::text')
