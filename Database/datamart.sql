@@ -33,6 +33,18 @@ CREATE USER MAPPING FOR datamartetl
   SERVER datamart_database_link
   OPTIONS (user '', password '');
 
+--Installs language for use in functions
+CREATE LANGUAGE pltcl;
+
+
+--Data cleaning function that detects if something is truly numeric (boolean)
+CREATE OR REPLACE FUNCTION is_numeric ( text ) RETURNS bool AS '
+  if { [string is integer $1] || [string is double $1] } {
+    return true
+  }
+  return false
+' LANGUAGE 'pltcl' IMMUTABLE;
+
 --refreshing the foreign data tables. Should be run on landingzone database.
 --  Update: no longer needed. Can't implement unique indexes on foreign tables which is a deal breaker.
 /*
@@ -45,6 +57,7 @@ DROP USER MAPPING FOR datamartetl SERVER datamart_database_link;
  DROP FOREIGN TABLE etltables.marketentry ;
  DROP FOREIGN TABLE etltables.marketplaceitem ;
  DROP FOREIGN TABLE etltables.source ;
+
 
 
 GRANT USAGE ON FOREIGN SERVER datamart_database_link TO datamartetl;

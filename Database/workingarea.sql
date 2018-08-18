@@ -48,29 +48,54 @@ FROM datamart.marketplaceitemrelationship
 LIMIT 10;
 
 --Select max date
-SELECT MAX(insertdatetime) as InsertTime, 'businessentity'
+SELECT MAX(insertdatetime) as InsertTime
+	, etlsource
+    , 'businessentity'
 FROM datamart.businessentity
+GROUP BY etlsource
 UNION ALL
-SELECT MAX(insertdatetime) as InsertTime, 'category'
+SELECT MAX(insertdatetime) as InsertTime
+	, etlsource
+    , 'category'
 FROM datamart.category
+GROUP BY etlsource
 UNION ALL
-SELECT MAX(insertdatetime) as InsertTime, 'categorytype'
+SELECT MAX(insertdatetime) as InsertTime
+	, etlsource
+    , 'categorytype'
 FROM datamart.categorytype
+GROUP BY etlsource
 UNION ALL
-SELECT MAX(insertdatetime) as InsertTime, 'console'
+SELECT MAX(insertdatetime) as InsertTime
+	, etlsource
+    , 'console'
 FROM datamart.console
+GROUP BY etlsource
 UNION ALL
-SELECT MAX(insertdatetime) as InsertTime, 'marketitem'
+SELECT MAX(insertdatetime) as InsertTime
+	, etlsource
+    , 'marketentry'
 FROM datamart.marketentry
+GROUP BY etlsource
 UNION ALL
-SELECT MAX(insertdatetime) as InsertTime, 'marketplaceitem'
+SELECT MAX(insertdatetime) as InsertTime
+	, etlsource
+    , 'marketplaceitem'
 FROM datamart.marketplaceitem
+GROUP BY etlsource
 UNION ALL
-SELECT MAX(insertdatetime) as InsertTime, 'source'
+SELECT MAX(insertdatetime) as InsertTime
+	, etlsource
+    , 'source'
 FROM datamart.source
+GROUP BY etlsource
 UNION ALL
-SELECT MAX(insertdatetime) as InsertTime, 'marketplaceitemrelationship'
-FROM datamart.marketplaceitemrelationship;
+SELECT MAX(insertdatetime) as InsertTime
+	, etlsource
+    , 'marketplaceitemrelationship'
+FROM datamart.marketplaceitemrelationship
+GROUP BY etlsource;
+
 
 
 --3-20-2018
