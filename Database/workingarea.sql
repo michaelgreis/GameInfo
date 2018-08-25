@@ -97,6 +97,55 @@ FROM datamart.marketplaceitemrelationship
 GROUP BY etlsource;
 
 
+SELECT MAX(insertdatetime) as InsertTime
+    , COUNT(*) as the_count
+    , 'businessentity'
+FROM datamart.businessentity
+GROUP BY etlsource
+UNION ALL
+SELECT MAX(insertdatetime) as InsertTime
+	, COUNT(*) as the_count
+    , 'category'
+FROM datamart.category
+GROUP BY etlsource
+UNION ALL
+SELECT MAX(insertdatetime) as InsertTime
+	, COUNT(*) as the_count
+    , 'categorytype'
+FROM datamart.categorytype
+GROUP BY etlsource
+UNION ALL
+SELECT MAX(insertdatetime) as InsertTime
+	, COUNT(*) as the_count
+    , 'console'
+FROM datamart.console
+GROUP BY etlsource
+UNION ALL
+SELECT MAX(insertdatetime) as InsertTime
+	, COUNT(*) as the_count
+    , 'marketentry'
+FROM datamart.marketentry
+GROUP BY etlsource
+UNION ALL
+SELECT MAX(insertdatetime) as InsertTime
+	, COUNT(*) as the_count
+    , 'marketplaceitem'
+FROM datamart.marketplaceitem
+GROUP BY etlsource
+UNION ALL
+SELECT MAX(insertdatetime) as InsertTime
+	, COUNT(*) as the_count
+    , 'source'
+FROM datamart.source
+GROUP BY etlsource
+UNION ALL
+SELECT MAX(insertdatetime) as InsertTime
+	, COUNT(*) as the_count
+    , 'marketplaceitemrelationship'
+FROM datamart.marketplaceitemrelationship
+GROUP BY etlsource;
+
+
 
 --3-20-2018
 INSERT INTO etltables.category (categoryid, categoryname, marketentryid, categorytypeid)
