@@ -97,54 +97,62 @@ FROM datamart.marketplaceitemrelationship
 GROUP BY etlsource;
 
 
+
 SELECT MAX(insertdatetime) as InsertTime
     , COUNT(*) as the_count
+    ,etlsource
     , 'businessentity'
 FROM datamart.businessentity
 GROUP BY etlsource
 UNION ALL
 SELECT MAX(insertdatetime) as InsertTime
 	, COUNT(*) as the_count
+    ,etlsource
     , 'category'
 FROM datamart.category
 GROUP BY etlsource
 UNION ALL
 SELECT MAX(insertdatetime) as InsertTime
 	, COUNT(*) as the_count
+    ,etlsource
     , 'categorytype'
 FROM datamart.categorytype
 GROUP BY etlsource
 UNION ALL
 SELECT MAX(insertdatetime) as InsertTime
 	, COUNT(*) as the_count
+    ,etlsource
     , 'console'
 FROM datamart.console
 GROUP BY etlsource
 UNION ALL
 SELECT MAX(insertdatetime) as InsertTime
 	, COUNT(*) as the_count
+    ,etlsource
     , 'marketentry'
 FROM datamart.marketentry
 GROUP BY etlsource
 UNION ALL
 SELECT MAX(insertdatetime) as InsertTime
 	, COUNT(*) as the_count
+    ,etlsource
     , 'marketplaceitem'
 FROM datamart.marketplaceitem
 GROUP BY etlsource
 UNION ALL
 SELECT MAX(insertdatetime) as InsertTime
 	, COUNT(*) as the_count
+    ,etlsource
     , 'source'
 FROM datamart.source
 GROUP BY etlsource
 UNION ALL
 SELECT MAX(insertdatetime) as InsertTime
 	, COUNT(*) as the_count
+    ,etlsource
     , 'marketplaceitemrelationship'
 FROM datamart.marketplaceitemrelationship
 GROUP BY etlsource;
-
 
 
 --3-20-2018
