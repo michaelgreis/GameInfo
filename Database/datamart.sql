@@ -45,6 +45,11 @@ CREATE OR REPLACE FUNCTION is_numeric ( text ) RETURNS bool AS '
   return false
 ' LANGUAGE 'pltcl' IMMUTABLE;
 
+
+CREATE EXTENSION IF NOT EXISTS tablefunc;
+
+
+
 --refreshing the foreign data tables. Should be run on landingzone database.
 --  Update: no longer needed. Can't implement unique indexes on foreign tables which is a deal breaker.
 /*
