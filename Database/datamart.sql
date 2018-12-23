@@ -21,6 +21,21 @@ COMMENT ON DATABASE datamart
 CREATE USER datamartetl;
 GRANT SELECT, INSERT, DELETE ON ALL TABLES IN SCHEMA datamart TO datamartetl;
 GRANT SELECT, INSERT, DELETE ON ALL TABLES IN SCHEMA scraperdata TO datamartetl;
+
+CREATE USER dataingestionpush with password 'AlexMichael';
+--grant insert on scraperdata.sonywebsite to dataingestionpush;
+grant usage on schema scraperdata to dataingestionpush;
+GRANT SELECT, INSERT ON ALL TABLES IN SCHEMA scraperdata TO dataingestionpush;
+GRANT CONNECT ON DATABASE landingzone TO dataingestionpush;
+ALTER USER dataingestionpush WITH PASSWORD 'alexmichael';
+ALTER USER datamartetl WITH PASSWORD 'AlexMichael';
+
+--Tableau viewer
+CREATE USER dataviewer with password 'ScrapeItRealGood'
+GRANT CONNECT ON DATABASE landingzone TO dataviewer;
+GRANT SELECT ON ALL TABLES IN SCHEMA datamart to dataviewer;
+GRANT SELECT ON ALL VIEWS IN SCHEMA datamart to dataviwer;
+
 --GRANT SELECT, INSERT, DELETE ON ALL TABLES IN SCHEMA etltables TO datamartetl; --Schema no longer exists. Since foreign data wrapper removed
 GRANT USAGE ON SCHEMA datamart TO datamartetl;
 GRANT USAGE ON SCHEMA scraperdata TO datamartetl;
@@ -29,9 +44,9 @@ GRANT CONNECT ON DATABASE landingzone TO datamartetl;
 --GRANT CONNECT ON DATABASE datamart TO datamartetl;
 
 --grants privleges to the table containing the fwd objects which allow lookups to the datamart schema for FK relationships.
-CREATE USER MAPPING FOR datamartetl
+/*CREATE USER MAPPING FOR datamartetl
   SERVER datamart_database_link
-  OPTIONS (user '', password '');
+  OPTIONS (user '', password '');*/
 
 --Installs language for use in functions
 CREATE LANGUAGE pltcl;
