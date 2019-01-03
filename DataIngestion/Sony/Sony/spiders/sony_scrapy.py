@@ -14,7 +14,7 @@ def load_product(response):
     for game in response.css(SET_SELECTOR):
         IMAGE_SELECTOR='.product-image__img--main img'
         BADGESALE_SELECTOR='.price-display__price::text'
-        GAMETITLE_SELECTOR='.grid-cell__title::text'
+        GAMETITLE_SELECTOR='.grid-cell__title > span::text'
         PLUS_BADGESALE_SELECTOR='.price-display__price--is-plus-upsell::text'
         CONSOLE_TYPE_SELECTOR='.grid-cell__left-detail--detail-1::text'
         ITEM_TYPE_SELECTOR='.grid-cell__left-detail--detail-2::text'
