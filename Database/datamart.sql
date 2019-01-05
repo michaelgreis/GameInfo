@@ -33,8 +33,8 @@ ALTER USER datamartetl WITH PASSWORD 'AlexMichael';
 --Tableau viewer
 CREATE USER dataviewer with password 'ScrapeItRealGood'
 GRANT CONNECT ON DATABASE landingzone TO dataviewer;
+GRANT USAGE ON SCHEMA datamart TO dataviewer;
 GRANT SELECT ON ALL TABLES IN SCHEMA datamart to dataviewer;
-GRANT SELECT ON ALL VIEWS IN SCHEMA datamart to dataviwer;
 
 --GRANT SELECT, INSERT, DELETE ON ALL TABLES IN SCHEMA etltables TO datamartetl; --Schema no longer exists. Since foreign data wrapper removed
 GRANT USAGE ON SCHEMA datamart TO datamartetl;
