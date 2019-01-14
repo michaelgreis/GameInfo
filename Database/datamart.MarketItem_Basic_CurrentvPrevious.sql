@@ -14,8 +14,8 @@ SELECT mibr.marketplaceitemid
 
 FROM (
     SELECT marketplaceitemid,
-        MAX(RecentEntryRank) as MostRecentEntry,
-        MAX(RecentEntryRank)-1 as PreviousEntry
+        MIN(RecentEntryRank) as MostRecentEntry,
+        MIN(RecentEntryRank)+1 as PreviousEntry
     FROM (
     SELECT marketplaceitemid, marketentryid, RANK() OVER (PARTITION BY marketplaceitemid ORDER BY marketentryid DESC) as RecentEntryRank
     FROM datamart.marketitem_basic
